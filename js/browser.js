@@ -208,15 +208,15 @@ function initTable() {
             $('#gamecard').hide();
         }
     });
+	$.getScript( "dew://lib/dew.js" )
+		.done(function() {
+			dew.command('Game.ScenarioScript matchmaking_cam');
+		})
 }
 
 function buildList() {
     var master_servers = [];
     var entire_server_list = [];
-	$.getScript( "dew://lib/dew.js" )
-		.done(function() {
-			dew.command('Game.ScenarioScript matchmaking_cam');
-		})
     var mshxr = $.getJSON(dewritoURL)
     .done(function( data ) {
         for (var i = 0; i<data.masterServers.length; i++){
