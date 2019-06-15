@@ -22,8 +22,8 @@ var controllersOn = false;
 var VerifyIPRegex = /^(?:(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)\.){3}(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)(?:\:(?:\d|[1-9]\d{1,3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5]))?$/;
 
 var dewritoURLList = [
-    "http://raw.githubusercontent.com/ElDewrito/ElDorito/master/dist/mods/dewrito.json",
-    "http://enashmods.github.io/dewrito.json"
+    "https://raw.githubusercontent.com/ElDewrito/ElDorito/master/dist/mods/dewrito.json",
+    "http://scooterpsu.github.io/dewrito.json"
 ];
 var URLIndex = 0;
 var dewritoURL = dewritoURLList[URLIndex];
@@ -473,7 +473,7 @@ function fillGameCard(i) {
 
 var blamList = [];
 
-$.getJSON("http://scooterpsu.github.io/blamList/blamList.json", function(json) {
+$.getJSON("https://scooterpsu.github.io/blamList/blamList.json", function(json) {
     blamList = json.words;
 })
 
@@ -598,7 +598,7 @@ function checkUpdate(ver) {
 
             swal({   
                 title: "0.6 Released!",
-                text: "2+ years in the making, but it's finally out. Go to http://www.reddit.com/r/HaloOnline/ to get the new update.",
+                text: "2+ years in the making, but it's finally out. Go to https://www.reddit.com/r/HaloOnline/ to get the new update.",
                 type: "error", allowEscapeKey: false
             });
         }
