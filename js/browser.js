@@ -458,10 +458,6 @@ function pingMe(ip, rowNum, delay) {
             }
         });
     }, delay);   
-	$.getScript( "dew://lib/dew.js" )
-		.done(function() {
-			dew.command('Game.ScenarioScript matchmaking_cam');
-		})
 }
 
 function fillGameCard(i) {
@@ -527,6 +523,10 @@ function refreshTable() {
     if(dewRconConnected) {
         connectionTrigger();   
     }
+	$.getScript( "dew://lib/dew.js" )
+		.done(function() {
+			dew.command('Game.ScenarioScript matchmaking_cam');
+		})
 }
 
 function quickMatch() {
