@@ -239,10 +239,6 @@ function buildList() {
             });
         }
     });
-	$.getScript( "dew://lib/dew.js" )
-		.done(function() {
-			dew.command('Game.ScenarioScript matchmaking_cam');
-		})
 }
 
 function buildTable(server_list){
@@ -345,6 +341,10 @@ function buildTable(server_list){
                 console.log(serverIP + " is invalid, skipping.");
             }
         }
+		$.getScript( "dew://lib/dew.js" )
+		.done(function() {
+			dew.command('Game.ScenarioScript matchmaking_cam');
+		})
 }
 
 function joinServer(i) {
