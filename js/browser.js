@@ -243,6 +243,10 @@ function buildList() {
 
 function buildTable(server_list){
     var table = $('#serverTable').DataTable();
+	$.getScript( "dew://lib/dew.js" )
+		.done(function() {
+			dew.command('Game.ScenarioScript matchmaking_cam');
+		})
         var pingDelay = 120;
         for (var i = 0; i < server_list.length; i++){
             serverIP = server_list[i];
@@ -504,10 +508,6 @@ function unique(list) {
 }
 
 function refreshTable() {
-	$.getScript( "dew://lib/dew.js" )
-		.done(function() {
-			dew.command('Game.ScenarioScript matchmaking_cam');
-		})
     //Throttle refresh so people can't spam and break the count
     if (isThrottled) { return; }
     isThrottled = true;
