@@ -228,7 +228,7 @@ var cacheJSONList = [
 ];
 var dewritoURLList = [
     "https://raw.githubusercontent.com/ElDewrito/ElDorito/master/dist/mods/dewrito.json",
-    "http://enashmods.github.io/dewrito.json"
+    "http://scooterpsu.github.io/dewrito.json"
 ];
 
 function initCachejson() {
