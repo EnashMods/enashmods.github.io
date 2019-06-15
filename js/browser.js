@@ -45,7 +45,6 @@ $(document).ready(function() {
         //dew.command('Game.FirstRun 1');
         window.location.href = 'http://rabidsquabbit.github.io/';
     })
-	dew.command('Game.ScenarioScript matchmaking_cam');
     //getCurrentRelease();
     initDewjson();
     initTable();
@@ -86,6 +85,7 @@ function initDewjson() {
         success: function()
         {
            buildList();
+		   dew.command('Game.ScenarioScript matchmaking_cam');
         }
     });
 }
