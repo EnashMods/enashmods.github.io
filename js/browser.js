@@ -44,8 +44,8 @@ $(document).ready(function() {
         //Keep FirstRun set until we stop messing with the server browser
         //dew.command('Game.FirstRun 1');
         window.location.href = 'http://rabidsquabbit.github.io/';
-		dew.command('Game.ScenarioScript matchmaking_cam');
     })
+	dew.command('Game.ScenarioScript matchmaking_cam');
     //getCurrentRelease();
     initDewjson();
     initTable();
