@@ -208,10 +208,6 @@ function initTable() {
             $('#gamecard').hide();
         }
     });
-	$.getScript( "dew://lib/dew.js" )
-		.done(function() {
-			dew.command('Game.ScenarioScript matchmaking_cam');
-		})
 }
 
 function buildList() {
@@ -243,6 +239,10 @@ function buildList() {
             });
         }
     });
+	$.getScript( "dew://lib/dew.js" )
+		.done(function() {
+			dew.command('Game.ScenarioScript matchmaking_cam');
+		})
 }
 
 function buildTable(server_list){
