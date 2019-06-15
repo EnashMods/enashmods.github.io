@@ -341,10 +341,7 @@ function buildTable(server_list){
                 console.log(serverIP + " is invalid, skipping.");
             }
         }
-		$.getScript( "dew://lib/dew.js" )
-		.done(function() {
-			dew.command('Game.ScenarioScript matchmaking_cam');
-		})
+		dewrite.command('Game.ScenarioScript matchmaking_cam');
 }
 
 function joinServer(i) {
@@ -621,18 +618,12 @@ function hasMap(map) {
 
 function closeBrowser() {
     ga('send', 'event', 'close-menu');
-	$.getScript( "dew://lib/dew.js" )
-		.done(function() {
-			dew.command('Game.ScenarioScript mainmenu_cam');
-		})
+	dewrite.command('Game.ScenarioScript mainmenu_cam');
     if(dewRconConnected) {
         setTimeout(function() {
             dewRcon.send('menu.show');
             dewRcon.send('Game.SetMenuEnabled 0');
-			$.getScript( "dew://lib/dew.js" )
-				.done(function() {
-				dew.command('Game.ScenarioScript mainmenu_cam');
-				})
+			dewrite.command('Game.ScenarioScript mainmenu_cam');
         }, "1000");
     } else{
         window.close();
