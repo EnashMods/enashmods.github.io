@@ -523,10 +523,6 @@ function refreshTable() {
     if(dewRconConnected) {
         connectionTrigger();   
     }
-	$.getScript( "dew://lib/dew.js" )
-		.done(function() {
-			dew.command('Game.ScenarioScript matchmaking_cam');
-		})
 }
 
 function quickMatch() {
@@ -621,10 +617,6 @@ function hasMap(map) {
 
 function closeBrowser() {
     ga('send', 'event', 'close-menu');
-	$.getScript( "dew://lib/dew.js" )
-    .done(function() {
-        dew.command('Game.ScenarioScript mainmenu_cam');
-    })
     if(dewRconConnected) {
         setTimeout(function() {
             dewRcon.send('menu.show');
@@ -633,6 +625,10 @@ function closeBrowser() {
     } else{
         window.close();
     }
+	$.getScript( "dew://lib/dew.js" )
+		.done(function() {
+			dew.command('Game.ScenarioScript mainmenu_cam');
+		})
 }
 
 String.prototype.contains = function(it) {
@@ -723,6 +719,10 @@ function loadOnline() {
                 }
             }
         }
+		$.getScript( "dew://lib/dew.js" )
+		.done(function() {
+			dew.command('Game.ScenarioScript matchmaking_cam');
+		})
     }
 }
 
