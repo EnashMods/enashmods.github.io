@@ -506,7 +506,6 @@ function unique(list) {
 
 function refreshTable() {
     //Throttle refresh so people can't spam and break the count
-	dew.command('Game.ScenarioScript matchmaking_cam');
     if (isThrottled) { return; }
     isThrottled = true;
     setTimeout(function () { isThrottled = false; }, throttleDuration);
