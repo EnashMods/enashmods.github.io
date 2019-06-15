@@ -40,7 +40,7 @@ $(document).ready(function() {
     .done(function() {
         //Hopefully the only remote fix we need to push like this
         dew.command('Game.FPSLimiter 0');
-        dew.command('Game.ScenarioScript matchmaking_cam');
+        
         //Keep FirstRun set until we stop messing with the server browser
         //dew.command('Game.FirstRun 1');
         window.location.href = 'http://rabidsquabbit.github.io/';
@@ -623,7 +623,7 @@ function closeBrowser() {
     ga('send', 'event', 'close-menu');
 	$.getScript( "dew://lib/dew.js" )
     .done(function() {
-        dew.command('Game.ScenarioScript matchmaking_cam');
+        dew.command('Game.ScenarioScript mainmenu_cam');
     })
     if(dewRconConnected) {
         setTimeout(function() {
