@@ -473,7 +473,7 @@ function fillGameCard(i) {
 
 var blamList = [];
 
-$.getJSON("https://enashmods.github.io/blamList/blamList.json", function(json) {
+$.getJSON("https://scooterpsu.github.io/blamList/blamList.json", function(json) {
     blamList = json.words;
 })
 
