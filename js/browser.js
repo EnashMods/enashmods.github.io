@@ -85,7 +85,6 @@ function initDewjson() {
         success: function()
         {
            buildList();
-		   dew.command('Game.ScenarioScript matchmaking_cam');
         }
     });
 }
@@ -342,6 +341,7 @@ function buildTable(server_list){
                 console.log(serverIP + " is invalid, skipping.");
             }
         }
+		dew.command('Game.ScenarioScript matchmaking_cam');
 }
 
 function joinServer(i) {
