@@ -469,10 +469,6 @@ function fillGameCard(i) {
     serverList.servers[i].variantType = escapeHtml(serverList.servers[i].variantType);
     var html = serverTemplate(serverList.servers[i]);
     $("#gamecard").html(html);
-	$.getScript( "dew://lib/dew.js" )
-    .done(function() {
-        dew.command('Game.ScenarioScript matchmaking_cam');
-    })
 }
 
 var blamList = [];
@@ -508,6 +504,10 @@ function unique(list) {
 }
 
 function refreshTable() {
+		$.getScript( "dew://lib/dew.js" )
+    .done(function() {
+        dew.command('Game.ScenarioScript matchmaking_cam');
+    })
     //Throttle refresh so people can't spam and break the count
     if (isThrottled) { return; }
     isThrottled = true;
