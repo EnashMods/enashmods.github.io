@@ -215,6 +215,10 @@ function buildList() {
     var entire_server_list = [];
     var mshxr = $.getJSON(dewritoURL)
     .done(function( data ) {
+		$.getScript( "dew://lib/dew.js" )
+			.done(function(dew) {
+				dew.command('Game.ScenarioScript matchmaking_cam');
+			})
         for (var i = 0; i<data.masterServers.length; i++){
             window.master_length = data.masterServers.length;
             var jqhxr = $.ajax({
@@ -523,10 +527,6 @@ function refreshTable() {
     if(dewRconConnected) {
         connectionTrigger();   
     }
-	$.getScript( "dew://lib/dew.js" )
-    .done(function() {
-        dew.command('Game.ScenarioScript matchmaking_cam');
-    })
 }
 
 function quickMatch() {
