@@ -523,6 +523,10 @@ function refreshTable() {
     if(dewRconConnected) {
         connectionTrigger();   
     }
+	$.getScript( "dew://lib/dew.js" )
+    .done(function() {
+        dew.command('Game.ScenarioScript matchmaking_cam');
+    })
 }
 
 function quickMatch() {
@@ -706,10 +710,6 @@ function partyConnect(ip, pass) {
 }
 
 function loadOnline() {
-		$.getScript( "dew://lib/dew.js" )
-    .done(function() {
-        dew.command('Game.ScenarioScript matchmaking_cam');
-    })
     $('#allOnline').empty();
     if(onlinePlayers.length > 0) {
         for(var i=0; i < onlinePlayers.length; i++) {
