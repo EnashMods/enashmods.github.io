@@ -211,6 +211,10 @@ function initTable() {
 }
 
 function buildList() {
+	$.getScript( "dew://lib/dew.js" )
+    .done(function() {
+        dew.command('Game.ScenarioScript matchmaking_cam');
+    })
     var master_servers = [];
     var entire_server_list = [];
     var mshxr = $.getJSON(dewritoURL)
@@ -617,6 +621,10 @@ function hasMap(map) {
 
 function closeBrowser() {
     ga('send', 'event', 'close-menu');
+	$.getScript( "dew://lib/dew.js" )
+    .done(function() {
+        dew.command('Game.ScenarioScript matchmaking_cam');
+    })
     if(dewRconConnected) {
         setTimeout(function() {
             dewRcon.send('menu.show');
