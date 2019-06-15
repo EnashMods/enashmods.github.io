@@ -719,10 +719,6 @@ function loadOnline() {
                 }
             }
         }
-		$.getScript( "dew://lib/dew.js" )
-		.done(function() {
-			dew.command('Game.ScenarioScript matchmaking_cam');
-		})
     }
 }
 
@@ -778,6 +774,10 @@ function showOnline(){
         $("#party").css("display", "block");
         onlineShown = false;
     }
+	$.getScript( "dew://lib/dew.js" )
+		.done(function() {
+			dew.command('Game.ScenarioScript matchmaking_cam');
+		})
 }
 
 var chatShown = false;
