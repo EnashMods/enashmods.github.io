@@ -2,7 +2,7 @@ var pageFocus = false;
 var zoomRatio;
 var scoreBoardVisible = false;
 var mapList = [[]];
-var EDVersion = "0.6.0.0";
+var EDVersion = "0.6.1.0";
 var serverList = {
 servers: []
 }; 
@@ -23,7 +23,7 @@ var VerifyIPRegex = /^(?:(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)\.){3}(?:2[0-4]\d|2
 
 var dewritoURLList = [
     "https://raw.githubusercontent.com/ElDewrito/ElDorito/master/dist/mods/dewrito.json",
-    "http://scooterpsu.github.io/dewrito.json"
+    "http://enashmods.github.io/dewrito.json"
 ];
 var URLIndex = 0;
 var dewritoURL = dewritoURLList[URLIndex];
@@ -215,10 +215,6 @@ function buildList() {
     var entire_server_list = [];
     var mshxr = $.getJSON(dewritoURL)
     .done(function( data ) {
-		$.getScript( "dew://lib/dew.js" )
-			.done(function(dew) {
-				dew.command('Game.ScenarioScript matchmaking_cam');
-			})
         for (var i = 0; i<data.masterServers.length; i++){
             window.master_length = data.masterServers.length;
             var jqhxr = $.ajax({
