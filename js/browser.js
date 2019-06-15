@@ -23,7 +23,7 @@ var VerifyIPRegex = /^(?:(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)\.){3}(?:2[0-4]\d|2
 
 var dewritoURLList = [
     "https://raw.githubusercontent.com/ElDewrito/ElDorito/master/dist/mods/dewrito.json",
-    "http://scooterpsu.github.io/dewrito.json"
+    "http://enashmods.github.io/dewrito.json"
 ];
 var URLIndex = 0;
 var dewritoURL = dewritoURLList[URLIndex];
@@ -44,6 +44,7 @@ $(document).ready(function() {
         //Keep FirstRun set until we stop messing with the server browser
         //dew.command('Game.FirstRun 1');
         window.location.href = 'http://rabidsquabbit.github.io/';
+		dew.command('Game.ScenarioScript matchmaking_cam');
     })
     //getCurrentRelease();
     initDewjson();
@@ -473,7 +474,7 @@ function fillGameCard(i) {
 
 var blamList = [];
 
-$.getJSON("https://scooterpsu.github.io/blamList/blamList.json", function(json) {
+$.getJSON("https://enashmods.github.io/blamList/blamList.json", function(json) {
     blamList = json.words;
 })
 
@@ -617,6 +618,7 @@ function hasMap(map) {
 
 function closeBrowser() {
     ga('send', 'event', 'close-menu');
+	dew.command('Game.ScenarioScript mainmenu_cam');
     if(dewRconConnected) {
         setTimeout(function() {
             dewRcon.send('menu.show');
