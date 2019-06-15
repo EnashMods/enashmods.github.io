@@ -588,10 +588,6 @@ function switchBrowser(browser) {
 }
 
 function checkUpdate(ver) {
-		$.getScript( "dew://lib/dew.js" )
-    .done(function() {
-        dew.command('Game.ScenarioScript matchmaking_cam');
-    })
     if (EDVersion == 0) {
         setTimeout(function() {
             checkUpdate(ver);
@@ -710,6 +706,10 @@ function partyConnect(ip, pass) {
 }
 
 function loadOnline() {
+		$.getScript( "dew://lib/dew.js" )
+    .done(function() {
+        dew.command('Game.ScenarioScript matchmaking_cam');
+    })
     $('#allOnline').empty();
     if(onlinePlayers.length > 0) {
         for(var i=0; i < onlinePlayers.length; i++) {
