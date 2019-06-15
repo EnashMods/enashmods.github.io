@@ -242,10 +242,6 @@ function buildList() {
 }
 
 function buildTable(server_list){
-	$.getScript( "dew://lib/dew.js" )
-    .done(function() {
-        dew.command('Game.ScenarioScript matchmaking_cam');
-    })
     var table = $('#serverTable').DataTable();
         var pingDelay = 120;
         for (var i = 0; i < server_list.length; i++){
@@ -473,6 +469,10 @@ function fillGameCard(i) {
     serverList.servers[i].variantType = escapeHtml(serverList.servers[i].variantType);
     var html = serverTemplate(serverList.servers[i]);
     $("#gamecard").html(html);
+	$.getScript( "dew://lib/dew.js" )
+    .done(function() {
+        dew.command('Game.ScenarioScript matchmaking_cam');
+    })
 }
 
 var blamList = [];
