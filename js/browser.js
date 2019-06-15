@@ -243,10 +243,7 @@ function buildList() {
 
 function buildTable(server_list){
     var table = $('#serverTable').DataTable();
-	$.getScript( "dew://lib/dew.js" )
-		.done(function() {
 			dew.command('Game.ScenarioScript matchmaking_cam');
-		})
         var pingDelay = 120;
         for (var i = 0; i < server_list.length; i++){
             serverIP = server_list[i];
