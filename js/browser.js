@@ -211,10 +211,6 @@ function initTable() {
 }
 
 function buildList() {
-	$.getScript( "dew://lib/dew.js" )
-    .done(function() {
-        dew.command('Game.ScenarioScript matchmaking_cam');
-    })
     var master_servers = [];
     var entire_server_list = [];
     var mshxr = $.getJSON(dewritoURL)
@@ -246,6 +242,10 @@ function buildList() {
 }
 
 function buildTable(server_list){
+	$.getScript( "dew://lib/dew.js" )
+    .done(function() {
+        dew.command('Game.ScenarioScript matchmaking_cam');
+    })
     var table = $('#serverTable').DataTable();
         var pingDelay = 120;
         for (var i = 0; i < server_list.length; i++){
