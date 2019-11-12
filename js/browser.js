@@ -40,11 +40,12 @@ $(document).ready(function() {
     .done(function() {
         //Hopefully the only remote fix we need to push like this
         dew.command('Game.FPSLimiter 0');
-        
+		dew.command('Game.ScenarioScript matchmaking_cam');
+		
         //Keep FirstRun set until we stop messing with the server browser
         //dew.command('Game.FirstRun 1');
-        window.location.href = 'http://rabidsquabbit.github.io/';
-    })
+        window.location.href = 'http://enashmods.github.io/';
+    });
     //getCurrentRelease();
     initDewjson();
     initTable();
@@ -628,7 +629,7 @@ function closeBrowser() {
 	$.getScript( "dew://lib/dew.js" )
 		.done(function() {
 			dew.command('Game.ScenarioScript mainmenu_cam');
-		})
+		});
 }
 
 String.prototype.contains = function(it) {
@@ -774,10 +775,6 @@ function showOnline(){
         $("#party").css("display", "block");
         onlineShown = false;
     }
-	$.getScript( "dew://lib/dew.js" )
-		.done(function() {
-			dew.command('Game.ScenarioScript matchmaking_cam');
-		})
 }
 
 var chatShown = false;
