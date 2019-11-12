@@ -40,7 +40,6 @@ $(document).ready(function() {
     .done(function() {
         //Hopefully the only remote fix we need to push like this
         dew.command('Game.FPSLimiter 0');
-		dew.command('Game.ScenarioScript matchmaking_cam');
 		
         //Keep FirstRun set until we stop messing with the server browser
         //dew.command('Game.FirstRun 1');
